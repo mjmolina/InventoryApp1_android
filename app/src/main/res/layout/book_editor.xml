@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_margin"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="Books"
+            android:textStyle="bold"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_book_title"
+                android:hint="@string/hint_book_title"
+                style="@style/EditorFieldStyle" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_gender"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Number of books"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonMinus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:background="#7659"
+                android:text="-"
+                android:textColor="#fdfbfb"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp" />
+
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="57dp"
+                android:layout_height="48dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/buttonPlus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:background="#7659"
+                android:text="+"
+                android:textColor="#fdfbfb"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/priceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Price"
+            android:textStyle="bold"
+            style="@style/CategoryStyle" />
+
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/price"
+                android:hint="Price"
+                android:inputType="number"
+                style="@style/EditorFieldStyle" />
+
+            <TextView
+                android:id="@+id/Euros"
+                android:text="€"
+                android:textSize="17sp"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/supplierLayout"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Supplier"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <EditText
+                android:id="@+id/supplier_name"
+                style="@style/EditorFieldStyle"
+                android:hint="Supplier name" />
+
+            <EditText
+                android:id="@+id/supplier_phone"
+                style="@style/EditorFieldStyle"
+                android:hint="Supplier phone"
+                android:inputType="number"
+                android:layout_below="@+id/supplier_name"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonSale"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#6aaac6"
+            android:text="Save"
+            android:textColor="#fdfbfb"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <!-- Delete -->
+        <LinearLayout
+            android:id="@+id/frame_delete"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="160dp"
+            android:layout_marginEnd="160dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_delete_sweep" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:elevation="16dp"
+                android:text="Delete"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Edit -->
+        <LinearLayout
+            android:id="@+id/frame_edit"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:elevation="16dp"
+                android:text="Edit"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Call -->
+        <LinearLayout
+            android:id="@+id/frame_call"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_phone_in_talk" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:elevation="16dp"
+                android:text="Call"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
