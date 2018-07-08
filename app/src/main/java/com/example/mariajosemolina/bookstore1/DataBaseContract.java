@@ -26,11 +26,11 @@ public class DataBaseContract {
         // Command to create the table
         public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + PRODUCT_NAME + " STRING, "
+                + PRODUCT_NAME + " TEXT, "
                 + PRICE + " REAL, "
                 + QUANTITY + " INTEGER, "
-                + SUPPLIER_NAME + " STRING,"
-                + SUPPLIER_PHONE_NUMBER + " STRING"
+                + SUPPLIER_NAME + " TEXT,"
+                + SUPPLIER_PHONE_NUMBER + " TEXT"
                 + ")";
 
         // Command to delete the table

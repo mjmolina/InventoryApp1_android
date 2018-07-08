@@ -11,25 +11,21 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 import java.util.ArrayList;
-
-
 
 public class BookRegistryAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
 
-        Context context;
+        private Context context;
         TextView title;
-        TextView author;
         TextView quantity;
         TextView price;
         Button button_sale;
-        View itemView;
+        private View itemView;
         ArrayList<BookRegistry> info;
 
-        public BookRegistryAdapter(Context myContext, ArrayList<BookRegistry> myinformation) {
-            this.info = myinformation;
+        public BookRegistryAdapter(Context myContext, ArrayList<BookRegistry> myInformation) {
+            this.info = myInformation;
             this.context = myContext;
 
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

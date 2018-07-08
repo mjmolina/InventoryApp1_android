@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -62,25 +61,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void printQueryResult(Cursor cursor) {
-        Log.d("Cursor columns", String.valueOf(cursor.getCount()));
-
-        if (cursor.moveToFirst()) {
-            do {
-                // Passing values
-                Integer id = cursor.getInt(0);
-                String productName = cursor.getString(1);
-                double price = cursor.getDouble(2);
-                double quantity = cursor.getInt(3);
-                String supplierName = cursor.getString(4);
-                String supplierPhoneNumber = cursor.getString(5);
-
-                Log.d("Result", id + ", " + productName + ", " + price + ", " + quantity + ", " + supplierName + ", " + supplierPhoneNumber);
-
-            } while (cursor.moveToNext());
-        }
-    }
-
     public void dbInit() {
         // Data base creation
         // This will get a reference to the db, and if it does not exist, the db will
@@ -103,6 +83,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                         Toast.LENGTH_SHORT).show();
             }
         }
+        cursor.close();
 
         // Closing the connection to the db since it was in Writing mode
         db.close();

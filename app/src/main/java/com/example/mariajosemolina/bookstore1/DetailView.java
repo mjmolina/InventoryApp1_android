@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -118,7 +117,9 @@ public class DetailView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                }
             }
         });
 
@@ -226,7 +227,6 @@ public class DetailView extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),
                                     "Error adding the new registry",
                                     Toast.LENGTH_SHORT).show();
-
                         }
 
                     }
@@ -359,7 +359,6 @@ public class DetailView extends AppCompatActivity {
                 break;
         }
     }
-
 
 }
 

@@ -1,10 +1,7 @@
 package com.example.mariajosemolina.bookstore1;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,23 +11,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ListView items;
     BookRegistryAdapter adapter;
     ArrayList<BookRegistry> books = new ArrayList<>();
-
-
-    private void printItems() {
-        for (int i = 0; i < books.size(); i++) {
-            BookRegistry book = books.get(i);
-            System.out.println(String.valueOf(book.id)+" "+book.productName+String.valueOf(book.price)+" "+String.valueOf(book.quantity)+" "+book.supplierName+" "+book.supplierPhoneNumber+"\n");
-        }
-    }
 
 
     @Override
@@ -59,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public void onResume(){
         super.onResume();
         DataBaseHelper dbHelper = new DataBaseHelper(MainActivity.this);
-        Log.d("lol", "lalita");
+        Log.d("nResume", "Resuming");
         books = dbHelper.dbQueryAll();
         adapter  = new BookRegistryAdapter(this, books);
         items.setAdapter(adapter);
@@ -88,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.delete_books:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
 
                 builder.setTitle("Confirm");
                 builder.setMessage("Are you sure you want to delete all the books?");

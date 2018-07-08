@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,8 +10,8 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="@dimen/LView_marginTB"
+        android:layout_marginBottom="@dimen/LView_marginTB" />
     <TextView
         android:id="@+id/empty_list_item"
         android:layout_width="match_parent"
@@ -21,7 +19,7 @@
         android:visibility="gone"
         android:textAlignment="center"
         android:layout_gravity="center"
-        android:text="No books available" >
+        android:text="@string/no_books_available" >
     </TextView>
 
 </android.support.design.widget.CoordinatorLayout>
