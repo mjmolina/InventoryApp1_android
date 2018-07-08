@@ -48,10 +48,15 @@ public class DetailView extends AppCompatActivity {
 
     private void setEnabled(Boolean tmpBool) {
 
-        if (tmpBool)
+        if (tmpBool) {
             buttonSave.setVisibility(View.VISIBLE);
-        else
+            increaseNumberOfBooksEditText.setVisibility(View.VISIBLE);
+            decreaseNumberOfBooksEditText.setVisibility(View.VISIBLE);
+        } else {
             buttonSave.setVisibility(View.INVISIBLE);
+            increaseNumberOfBooksEditText.setVisibility(View.INVISIBLE);
+            decreaseNumberOfBooksEditText.setVisibility(View.INVISIBLE);
+        }
 
         buttonSave.setEnabled(tmpBool);
         bookEditText.setEnabled(tmpBool);
